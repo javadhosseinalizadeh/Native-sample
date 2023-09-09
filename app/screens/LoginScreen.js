@@ -15,7 +15,7 @@ const validationSchema = Yup.object().shape({
     password: Yup.string().required('این فیلد الزامی می باشد').min(4, 'کلمه ی عبور نباید کمتر از 4 کاراکتر باشد'),
 })
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
 
     // const [email , setEmail] = useState()
     // const [password , setpassword] = useState()
@@ -26,8 +26,8 @@ const LoginScreen = () => {
         <Image style={styles.logo} source={require('../assets/logo.png')} />
         <FormComponent
             initialValues={{email: '', password: ''}}
-            onSubmit={val => console.log(val)}
-            validationSchema={validationSchema}
+            onSubmit={()=> navigation.navigate('Home')}
+            // validationSchema={validationSchema}
         >
            
             <FormfieldComponent

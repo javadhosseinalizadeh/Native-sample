@@ -1,17 +1,14 @@
 import {NavigationContainer} from '@react-navigation/native'
-import {createStackNavigator} from '@react-navigation/stack'
 import { useFonts } from 'expo-font';
 import { I18nManager } from 'react-native'
-import WelcomeScreen from './app/screens/welcomeScreen'
-import LoginScreen from './app/screens/LoginScreen';
-import RegisterScreen from './app/screens/RegisterScreen';
-import {createButto} from '@react-navigation/buttom-tabs'
+import StackNavigator from './app/containers/StackNavigator';
+
 
 // suppurt for RTL
 I18nManager.allowRTL(true);
 I18nManager.forceRTL(true);
 
-const Stack = createStackNavigator();
+
 
 
 const App = () => {
@@ -25,11 +22,7 @@ const App = () => {
   } else {
           return ( 
           <NavigationContainer >
-            <Stack.Navigator screenOptions={{ headerShown: false }} >
-              <Stack.Screen name='welcome' component={WelcomeScreen}/>
-              <Stack.Screen name='Login' component={LoginScreen}/>
-              <Stack.Screen name='Register' component={RegisterScreen}/>
-            </Stack.Navigator>
+            <StackNavigator />
           </NavigationContainer>
       );
   }
