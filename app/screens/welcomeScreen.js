@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Button, StyleSheet, Image, ImageBackground } from 'react-native'
-import ButtonComponent from '../components/ButtonComponent/ButtunComponent';
+import ButtonComponent from '../../Shared/ButtonComponent/ButtunComponent';
 
 const WelcomeScreen = ({navigation}) => {
     return ( 
@@ -25,7 +25,7 @@ const WelcomeScreen = ({navigation}) => {
                 onPress={()=> navigation.navigate('Login')}
                 
                 />
-                <ButtonComponent title='ثبت نام'  onPress={()=> {}}/>
+                <ButtonComponent title='ثبت نام'  onPress={()=> navigation.navigate('Register')}/>
             </View>
         </ImageBackground>
      );
